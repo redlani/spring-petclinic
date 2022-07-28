@@ -14,22 +14,18 @@ pipeline {
       }
     }
     
-//     stage('Scan') {
-//       steps {
-//         echo 'Attempting SonarQube Analysis'
-//         withSonarQubeEnv(installationName: 'sq1') {
-//             sh 'mvn sonar:sonar \
-//                   -Dsonar.projectKey=spring-petclinic-jenkins \
-//                   -Dsonar.host.url=http://localhost:9000 \
-//                   -Dsonar.login=239dc0527daa08ffd25e8fbf8c638cf25e80ed11'
-//         }
-//
-//       }
-//     }
+    stage('Scan') {
+      steps {
+        echo 'Attempting SonarQube Analysis'
+        withSonarQubeEnv(installationName: 'sq1') {
+            sh 'mvn clean install sonar:sonar'
+        }
+
+      }
+    }
 
     stage('Run') {
       steps {
-//         sh './mvnw package'
         sh 'java -jar target/*.jar'
       }
     }
