@@ -4,6 +4,7 @@ pipeline {
     stage('Checkout') {
       steps {
         echo 'Checking out repo'
+//         checkout steps here
       }
     }
 
@@ -18,7 +19,7 @@ pipeline {
       steps {
         echo 'Attempting SonarQube Analysis'
         withSonarQubeEnv(installationName: 'sq1') {
-            sh 'mvn clean install sonar:sonar'
+            sh './mvnw clean install sonar:sonar'
         }
 
       }
