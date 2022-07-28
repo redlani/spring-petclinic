@@ -18,7 +18,6 @@ pipeline {
       steps {
         echo 'Attempting SonarQube Analysis'
         withSonarQubeEnv('sq1') {
-          sh './mvnw clean install'
           sh './mvnw sonar:sonar'
         }
 
