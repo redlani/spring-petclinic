@@ -29,7 +29,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh './mvnw package'
+//         sh './mvnw package'
         sh 'java -jar target/*.jar'
       }
     }
