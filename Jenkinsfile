@@ -26,7 +26,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh 'java -jar target/*.jar -Dmaven.test.skip=true'
+        sh 'java -jar target/*.jar'
       }
     }
 
