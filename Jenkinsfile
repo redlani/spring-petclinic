@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Attempting build'
-        sh './mvnw clean install'
+        sh './mvnw clean install -DskipTests'
       }
     }
 
@@ -26,7 +26,7 @@ pipeline {
 
     stage('Run') {
       steps {
-        sh 'java -jar target/*.jar'
+        sh 'java -jar target/*.jar -Dmaven.test.skip=true'
       }
     }
 
