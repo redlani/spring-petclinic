@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Attempting build'
-        sh './mvnw package'
+        sh './mvnw package -Dmaven.test.skip'
       }
     }
 
