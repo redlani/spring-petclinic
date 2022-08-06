@@ -10,7 +10,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Attempting build'
-        sh './mvnw clean install -DskipTests'
+        sh './mvnw package'
+//         sh './mvnw clean install -DskipTests'
       }
     }
 
