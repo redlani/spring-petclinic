@@ -11,7 +11,6 @@ pipeline {
       steps {
         echo 'Attempting build'
         sh './mvnw package'
-//         sh './mvnw clean install -DskipTests'
       }
     }
 
