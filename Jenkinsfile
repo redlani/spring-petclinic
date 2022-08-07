@@ -21,9 +21,9 @@ pipeline {
       }
     }
 
-    stage('Run') {
+    stage('Deploy') {
       steps {
-        sh 'java -jar target/*.jar'
+        sh 'ansiblePlaybook become: true, installation: \'ansible\', playbook: \'/vagrant/ansible_devops.yml\''
       }
     }
 
