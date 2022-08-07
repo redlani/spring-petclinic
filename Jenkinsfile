@@ -18,9 +18,6 @@ pipeline {
       steps {
         echo 'Attempting SonarQube Analysis'
         sh './mvnw sonar:sonar -Dsonar.login=48b8d771792610fbe0e765d504110ef374344cb6'
-//         withSonarQubeEnv('sq1') {
-//           sh './mvnw sonar:sonar'
-//         }
       }
     }
 
