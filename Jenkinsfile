@@ -23,7 +23,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '/usr/bin/ansible-playbook /vagrant/ansible_devops.yml -f 5'
+        sh '/usr/bin/ansible-playbook /vagrant/ansible_devops.yml -i /vagrant/inventory -f 5'
       }
     }
 
