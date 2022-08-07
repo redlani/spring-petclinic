@@ -17,10 +17,13 @@ pipeline {
     stage('Scan') {
       steps {
         echo 'Attempting SonarQube Analysis'
-        withSonarQubeEnv('sq1') {
-          sh './mvnw sonar:sonar'
-        }
-
+        mvn sonar:sonar \
+          -Dsonar.projectKey=spring-petclinic-jenkins \
+          -Dsonar.host.url=http://192.168.50.4:9000 \
+          -Dsonar.login=40e4ddd255c2ef5098f90250ca7addf126706c7f
+//         withSonarQubeEnv('sq1') {
+//           sh './mvnw sonar:sonar'
+//         }
       }
     }
 
