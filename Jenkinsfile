@@ -23,7 +23,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'ansiblePlaybook become: true, installation: \'ansible\', playbook: \'/vagrant/ansible_devops.yml\''
+        sh '/usr/bin/ansible-playbook /vagrant/ansible_devops.yml -f 5'
       }
     }
 
