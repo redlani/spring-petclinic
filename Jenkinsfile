@@ -23,7 +23,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '/usr/bin/ansible-playbook /vagrant/ansible_devops.yml -i /vagrant/inventory -f 5'
+        sh '/usr/bin/ansible-playbook /vagrant/ansible_devops.yml -i /vagrant/inventory -u vagrant --private_key=/var/tmp/my.key -f 5'
       }
     }
 
